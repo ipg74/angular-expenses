@@ -6,19 +6,21 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { CategoryListComponent } from './category-list/category-list.component';
+import { ExpensesListComponent } from './expenses-list/expenses-list.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: CategoryListComponent },
+      { path: '', component: ExpensesListComponent },
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    ExpensesListComponent
   ],
   bootstrap: [
     AppComponent

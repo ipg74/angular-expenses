@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import { expenses } from '../expenses';
+
+const today = new Date();
+const filter = { year: today.getFullYear(), month: today.getMonth() };
+const filteredExpenses = expenses.filter(
+  (x) => x.rok == filter.year.toString() && x.miesiac == filter.month.toString()
+);
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: 'app-expenses-list',
+  templateUrl: './expenses-list.component.html',
+  styleUrls: ['./expenses-list.component.css'],
 })
-export class ProductListComponent {
-  products = products;
-
-  share() {
-    window.alert('The product has been shared!');
-  }
+export class ExpensesListComponent {
+  filter = filter;
+  expenses = filteredExpenses;
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.

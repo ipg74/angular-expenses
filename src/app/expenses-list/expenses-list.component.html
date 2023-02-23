@@ -1,5 +1,12 @@
-<h2>Products</h2>
+<h2>Wydatki</h2>
 
+<h3>
+  {{ filter.year }} - {{ filter.month }}
+</h3>
+
+<div *ngFor="let expense of expenses">
+  <p>{{ expense.kwota }} {{ expense.info }}</p>
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
