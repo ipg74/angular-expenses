@@ -4,10 +4,15 @@
   <button type="button" (click)="changePeriod(true)">&lt;</button>
   {{ filter.year }} - {{ filter.month }}
   <button type="button" (click)="changePeriod(false)">&gt;</button>
-<p>
+</p>
+
+<p></p>
 
 <div *ngFor="let expense of expenses">
-  <p>{{ expense.kwota }} {{ expense.info }}</p>
+  <p>
+    {{ expense.kategoria?.code }} {{ expense.kategoria?.name }}
+    {{ expense.kwota }} {{ expense.info }}
+  </p>
 </div>
 
 <!-- 

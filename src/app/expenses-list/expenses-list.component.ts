@@ -5,12 +5,12 @@ import { expenses } from '../expenses';
 const today = new Date();
 const filter = { year: today.getFullYear(), month: today.getMonth() };
 var filteredExpenses = expenses.filter(
-  (x) => x.rok == filter.year.toString() && x.miesiac == filter.month.toString()
+  (x) => x.rok == filter.year && x.miesiac == filter.month
 );
-function filterExpenses() 
-{
+function filterExpenses() {
   return expenses.filter(
-    (x) => x.rok == filter.year.toString() && x.miesiac == filter.month.toString());
+    (x) => x.rok == filter.year && x.miesiac == filter.month
+  );
 }
 
 @Component({
@@ -21,26 +21,19 @@ function filterExpenses()
 export class ExpensesListComponent {
   filter = filter;
   expenses = filterExpenses();
-  changePeriod(back: boolean)
-  {
-    if (back && filter.month == 1)
-    {
+  changePeriod(back: boolean) {
+    if (back && filter.month == 1) {
       filter.year--;
       filter.month = 12;
-    }
-    else if (!back && filter.month == 12)
-    {
+    } else if (!back && filter.month == 12) {
       filter.year++;
       filter.month = 1;
-    }
-    else 
-    {
+    } else {
       filter.month = filter.month + (back ? -1 : 1);
     }
     this.expenses = filterExpenses();
   }
 }
-
 
 /*
 Copyright Google LLC. All Rights Reserved.
