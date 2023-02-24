@@ -1,8 +1,10 @@
 <h2>Wydatki</h2>
 
-<h3>
+<p class="">
+  <button type="button" (click)="changePeriod(true)">&lt;</button>
   {{ filter.year }} - {{ filter.month }}
-</h3>
+  <button type="button" (click)="changePeriod(false)">&gt;</button>
+<p>
 
 <div *ngFor="let expense of expenses">
   <p>{{ expense.kwota }} {{ expense.info }}</p>
