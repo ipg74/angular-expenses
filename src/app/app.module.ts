@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { ExpensesListComponent } from './expenses-list/expenses-list.component';
+import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 
 @NgModule({
   imports: [
@@ -14,13 +15,15 @@ import { ExpensesListComponent } from './expenses-list/expenses-list.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ExpensesListComponent },
+      { path: 'expenses/:expenseId', component: ExpenseDetailsComponent },
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     CategoryListComponent,
-    ExpensesListComponent
+    ExpensesListComponent,
+    ExpenseDetailsComponent
   ],
   bootstrap: [
     AppComponent

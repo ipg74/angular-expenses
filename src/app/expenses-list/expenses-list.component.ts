@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { expenses } from '../expenses';
+import { expenses, Expense } from '../expenses';
 
 const today = new Date();
 const filter = { year: today.getFullYear(), month: today.getMonth() };
@@ -33,6 +33,7 @@ export class ExpensesListComponent {
     }
     this.expenses = filterExpenses();
   }
+  edit(item: Expense) {}
 }
 
 /*

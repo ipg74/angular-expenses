@@ -6,14 +6,15 @@
   <button type="button" (click)="changePeriod(false)">&gt;</button>
 </p>
 
-<p></p>
-
-<div *ngFor="let expense of expenses">
-  <p>
-    {{ expense.kategoria?.code }} {{ expense.kategoria?.name }}
-    {{ expense.kwota }} {{ expense.info }}
-  </p>
-</div>
+<table>
+  <tr *ngFor="let expense of expenses">
+    <td>{{ expense.kategoria?.code }}</td>
+    <td>{{ expense.kategoria?.name }}</td>
+    <td class="align-right">{{ expense.kwota }}</td>
+    <td>{{ expense.info }}</td>
+    <td><a [title]="" [routerLink]="['/expenses', expense.id]">Zmien</a></td>
+  </tr>
+</table>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
